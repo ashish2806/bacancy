@@ -129,7 +129,7 @@ export const register = (accArr) => {
 	return dispatch => {
 	let url = 'register';
         
-    axios.post('register', accArr)
+    axios.post(url, accArr)
         .then(response => {
             console.log('response', response);
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000);

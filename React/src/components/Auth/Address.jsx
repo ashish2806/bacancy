@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect ,Link} from 'react-router-dom';
 
-import { Paper, withStyles, Grid, TextField, Button, FormControlLabel, Checkbox } from '@material-ui/core';
-import { Face, Fingerprint } from '@material-ui/icons'
+import {  withStyles, Grid, TextField, Button } from '@material-ui/core';
+
 import { updateObject, checkValidity } from '../../shared/utility.jsx';
 import * as actions from '../../store/actions/index.jsx';
 import GridItem from "components/Grid/GridItem.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import Table from "components/Table/Table.jsx";
 import Card from "components/Card/Card.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 
 const styles = {
@@ -141,15 +140,8 @@ class Address extends Component {
         const { classes } = this.props;
         console.log(this.state.show_address);
         
-        let authRedirect = null;
-        console.log('=====> 1.1  ===> ' + this.props.isAuthenticated);
-        if (this.props.isAuthenticated) {
-            console.log('=====> 1.1  authRedirectPath ===> ' + this.props.authRedirectPath);
-            // authRedirect = <Redirect to={this.props.authRedirectPath} />
-            return (
-                <Redirect to={"/dashboard"} />
-            )
-        }
+       
+       
       
       let t =[];
       
